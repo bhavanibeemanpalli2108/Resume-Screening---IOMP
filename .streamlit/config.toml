@@ -1,0 +1,22 @@
+[theme]
+base = "light"
+primaryColor = "#9cfca1"
+backgroundColor = "#c0eed9"
+secondaryBackgroundColor = "#fafafa"
+textColor = "#000002"
+font = ""
+
+[server]
+# Disable file watcher — stops constant polling that slows dev mode
+fileWatcherType = "none"
+# Increase max upload size for resumes
+maxUploadSize = 20
+
+[runner]
+# Don't rerun on every widget interaction unless explicitly triggered
+fastReruns = true
+
+[client]
+# Show spinner on slow operations
+showErrorDetails = false
+toolbarMode = "minimal"

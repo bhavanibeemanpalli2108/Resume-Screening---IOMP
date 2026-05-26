@@ -1,0 +1,14 @@
+# env files
+.env
+*.env
+
+# copied git metadata
+.git*/
+
+# python cache
+__pycache__/
+*.pyc
+
+# virtual env
+venv/
+venv*/
