@@ -16,3 +16,5 @@ pytest>=8.0.0 # used pytest for writing and running unit tests and integration t
 torch>=2.0.0 # used torch for deep learning tasks and model training in the application
 transformers>=4.0.0  # used transformers for working with pre-trained language models and fine-tuning them for specific tasks in the application
 scikit-learn>=1.0.0 # used scikit-learn for machine learning tasks such as clustering, classification, and regression in the application
+spacy
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
