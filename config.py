@@ -1,19 +1,41 @@
+# import os
+# from dotenv import load_dotenv
+
+# load_dotenv()
+
+# # Supabase
+# SUPABASE_URL: str = os.getenv("SUPABASE_URL", "")
+# SUPABASE_KEY: str = os.getenv("SUPABASE_KEY", "")
+
+# # Email (SendGrid)
+# SENDGRID_API_KEY: str = os.getenv("SENDGRID_API_KEY", "")
+# SENDER_EMAIL: str = os.getenv("SENDER_EMAIL", "")
+
+# # Gemini AI (replaces Ollama)
+# GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
+# GEMINI_MODEL: str = "gemini-2.0-flash"
+
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    import streamlit as st
 
-# Supabase
-SUPABASE_URL: str = os.getenv("SUPABASE_URL", "")
-SUPABASE_KEY: str = os.getenv("SUPABASE_KEY", "")
+    SUPABASE_URL = st.secrets["SUPABASE_URL"]
+    SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+    SENDGRID_API_KEY = st.secrets["SENDGRID_API_KEY"]
+    SENDER_EMAIL = st.secrets["SENDER_EMAIL"]
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
-# Email (SendGrid)
-SENDGRID_API_KEY: str = os.getenv("SENDGRID_API_KEY", "")
-SENDER_EMAIL: str = os.getenv("SENDER_EMAIL", "")
+except:
+    from dotenv import load_dotenv
 
-# Gemini AI (replaces Ollama)
-GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL: str = "gemini-2.0-flash"
+    load_dotenv()
+
+    SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+    SUPABASE_KEY = os.getenv("SUPABASE_KEY", "")
+    SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY", "")
+    SENDER_EMAIL = os.getenv("SENDER_EMAIL", "")
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 # Embedding
 EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
